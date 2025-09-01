@@ -4,14 +4,10 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        s = s.strip().lower()
-        pattern = r'[^a-zA-Z0-9]'
-        cleaned_string = re.sub(pattern,'',s)
+        s = re.sub(r'[^a-zA-Z0-9]','',s).lower()
+        string_reversed = s[::-1]
 
-        string_reverse = cleaned_string[::-1]
-        if cleaned_string == "":
-            return True
-        elif cleaned_string == string_reverse:
+        if s == string_reversed:
             return True
         else:
             return False
